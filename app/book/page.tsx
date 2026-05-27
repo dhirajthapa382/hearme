@@ -10,6 +10,7 @@ export default function BookPage() {
   const [duration, setDuration] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [timezone, setTimezone] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -34,6 +35,7 @@ export default function BookPage() {
           duration,
           date,
           time,
+          timezone,
           message,
           status: "Pending",
         }),
@@ -199,34 +201,71 @@ export default function BookPage() {
 
 
           {/* Date */}
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="w-full p-4 rounded-2xl bg-white/10 border border-white/10 outline-none"
-          />
+          
+<input
+  type="date"
+  min={new Date().toISOString().split("T")[0]}
+  value={date}
+  onChange={(e) => setDate(e.target.value)}
+  className="w-full p-4 rounded-2xl bg-white/10 border border-white/10 outline-none text-white"
+/>
 
 
 
-          {/* Time */}
-          <select
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            className="w-full p-4 rounded-2xl bg-white/10 border border-white/10 outline-none text-white"
-          >
+          
+          
+{/* Time */}
+<input
+  type="text"
+  placeholder="Example: 7:30 PM"
+  value={time}
+  onChange={(e) => setTime(e.target.value)}
+  className="w-full p-4 rounded-2xl bg-white/10 border border-white/10 outline-none"
+ />
+ {/* Timezone */}
+<select
+  value={timezone}
+  onChange={(e) => setTimezone(e.target.value)}
+  className="w-full p-4 rounded-2xl bg-white/10 border border-white/10 outline-none text-white"
+>
 
-            <option value="" className="text-black">
-              Select Time
-            </option>
+  <option value="" className="text-black">
+    Select Timezone
+  </option>
 
-            <option className="text-black">08:00 AM</option>
-            <option className="text-black">10:00 AM</option>
-            <option className="text-black">12:00 PM</option>
-            <option className="text-black">03:00 PM</option>
-            <option className="text-black">06:00 PM</option>
-            <option className="text-black">09:00 PM</option>
+  <option className="text-black">
+    IST (India)
+  </option>
 
-          </select>
+  <option className="text-black">
+    EST (USA Eastern)
+  </option>
+
+  <option className="text-black">
+    PST (USA Pacific)
+  </option>
+
+  <option className="text-black">
+    GMT (United Kingdom)
+  </option>
+
+  <option className="text-black">
+    CET (Europe)
+  </option>
+
+  <option className="text-black">
+    MSK (Russia Moscow)
+  </option>
+
+  <option className="text-black">
+    JST (Japan)
+  </option>
+
+  <option className="text-black">
+    GST (UAE Dubai)
+  </option>
+
+</select>
 
 
 
