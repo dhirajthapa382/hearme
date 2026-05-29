@@ -13,6 +13,22 @@ const resend = new Resend("re_FvLKTB8R_Q8FAGLMgrJL5MGoxZQQgLM59");
 export async function POST(req: Request) {
   try {
     const body = await req.json();
+    await resend.emails.send({
+  from: "HearMe <onboarding@resend.dev>",
+  to: body.email,
+  subject: "Booking Received",
+  html: `
+    <h1>HearMe Booking Received</h1>
+
+    <p>Hello ${body.name},</p>
+
+    <p>Your booking payment has been received.</p>
+
+    <p>Your booking is waiting for admin approval.</p>
+
+    <p>— HearMe Team</p>
+  `,
+});
 
     const { data, error } = await supabase
       .from("bookings")
