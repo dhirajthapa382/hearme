@@ -101,9 +101,66 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="text-center text-gray-400 mt-32 pb-10">
-        © 2026 HearMe — Real conversations. Real people.
+      {/* Testimonials */}
+      <section className="max-w-5xl mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          What People Say
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+
+          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
+            <p>"I felt heard and understood."</p>
+            <p className="mt-4 text-gray-400">— Anonymous</p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
+            <p>"A calm and comfortable conversation."</p>
+            <p className="mt-4 text-gray-400">— Anonymous</p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
+            <p>"Thank you for listening without judgment."</p>
+            <p className="mt-4 text-gray-400">— Anonymous</p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 mt-10 py-10">
+
+        <div className="text-center text-sm text-gray-400 max-w-3xl mx-auto">
+
+          <p>
+            HearMe is not a therapy, counseling,
+            medical, or crisis intervention service.
+          </p>
+
+          <p className="mt-2">
+            HearMe provides supportive listening
+            and human conversation only.
+          </p>
+
+          <p className="mt-4">
+            Contact: thapadhiraj468@gmail.com
+          </p>
+
+          <div className="mt-6 flex justify-center gap-6 flex-wrap">
+            <a href="/about">About</a>
+            <a href="/faq">FAQ</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/contact">Contact</a>
+          </div>
+
+          <p className="mt-8">
+            © 2026 HearMe — Real conversations. Real people.
+          </p>
+
+        </div>
+
       </footer>
+
     </main>
   );
 }
