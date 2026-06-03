@@ -5,7 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   "https://ryrsrrjfnmuitlccowvh.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5cnNycmpmbm11aXRsY2Nvd3ZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MDI2NTgsImV4cCI6MjA5NTM3ODY1OH0.yz6B1fY6yXlrKgQ_lTemiUptufErBETitkteDin0HRI"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ5cnNycmpmbm11aXRsY2Nvd3ZoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3OTgwMjY1OCwiZXhwIjoyMDk1Mzc4NjU4fQ.Pr_3-Toxr7bKuHb5wU6yZYBBg2LHc6aNv72u82fB4YQ"
 
 );
 
@@ -41,6 +41,8 @@ export async function POST(req: Request) {
         },
       ])
       .select();
+console.log("INSERT DATA:", data);
+console.log("INSERT ERROR:", error);
 
     if (error) {
       console.log(error);
