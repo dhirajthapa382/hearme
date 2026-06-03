@@ -362,15 +362,7 @@ export default function BookPage() {
                await saveBooking("pending");
               }}
             />
-            <button
-  onClick={async () => {
-    if (!checkForm()) return;
-    await saveBooking("Test Booking");
-  }}
-  className="w-full bg-green-500 text-white py-4 rounded-2xl font-medium mt-4"
->
-  Free Test Booking
-</button>
+            
           </div>
         </div>
       </main>
